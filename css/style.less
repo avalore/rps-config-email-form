@@ -47,7 +47,7 @@ body{
 	p, label{
 		margin: 24px;
 		font-weight: 300;
-		font-size: 20px;
+		font-size: 18px;
 		color: @dark;
 		a{
 			color: @reapitBlue;
@@ -92,7 +92,12 @@ body{
 }
 //global forms
 .marketing, .viewing, .information, .examples{
-	display: none;
+	display: none;	
+	h2{
+		padding-top: 20px;
+		margin-top: 10px;
+		border-top: 1px solid @reapitBlue;
+	}
 }
 input{
 	font-family: 'Roboto', sans-serif; 
@@ -114,7 +119,7 @@ hr{
 	p{
 		font-size: 15px;
 	}
-	input{
+	input, textarea{
 		width: 40%;
 		padding: 10px;
 		outline: 0;
@@ -122,8 +127,16 @@ hr{
 		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 		transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
 		font-size: 15px;
-		&:hover{
+		&:hover, &:focus{
 			box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
 		}
+	}
+	textarea{
+		margin-bottom: -10px;
+	}
+	input[type="checkbox"]{
+		width: auto;
+		border: 0;
+		box-shadow: none;
 	}
 }

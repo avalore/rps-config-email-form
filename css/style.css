@@ -51,7 +51,7 @@ body {
 .container label {
   margin: 24px;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   color: #333333;
 }
 .container p a,
@@ -102,6 +102,14 @@ body {
 .examples {
   display: none;
 }
+.marketing h2,
+.viewing h2,
+.information h2,
+.examples h2 {
+  padding-top: 20px;
+  margin-top: 10px;
+  border-top: 1px solid #6083ff;
+}
 input {
   font-family: 'Roboto', sans-serif;
 }
@@ -123,7 +131,8 @@ hr {
 .settingsWrapper p {
   font-size: 15px;
 }
-.settingsWrapper input {
+.settingsWrapper input,
+.settingsWrapper textarea {
   width: 40%;
   padding: 10px;
   outline: 0;
@@ -132,6 +141,17 @@ hr {
   transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 15px;
 }
-.settingsWrapper input:hover {
+.settingsWrapper input:hover,
+.settingsWrapper textarea:hover,
+.settingsWrapper input:focus,
+.settingsWrapper textarea:focus {
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+.settingsWrapper textarea {
+  margin-bottom: -10px;
+}
+.settingsWrapper input[type="checkbox"] {
+  width: auto;
+  border: 0;
+  box-shadow: none;
 }

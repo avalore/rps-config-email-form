@@ -64,6 +64,67 @@
 						<input type="text">
 						<p>For this please use <strong>full names</strong> and ensure that you have at least one person from each of your offices.</p>
 					</div>
+					<h2>Notifications</h2>
+					<p>When an appoitnment is being booked, the following notification events are triggered:</p>
+					<div class="settingsWrapper">
+						<h3>On Screen Notification</h3>
+						<p>Default: "To book a valuation, please enter your e-mail and postcode below".</p>
+						<p><strong>If you would like this changed you will need to review with your web company.</strong></p>
+						<h3>Email Subject</h3>
+						<label>Sales:</label>
+						<input type="text">
+						<p>Default:<br/>
+						“Your Valuation Request”</p>
+						<label>Lettings:</label>
+						<input type="text">
+						<p>Default:<br/>
+						“Your Lettings Valuation Request”</p>
+						<h3>Reply Address</h3>
+						<label>Please Specify Address:</label>
+						<input type="text">
+						<p>Default:<br/>
+						no-reply@client-website.co.uk</p>
+						<p><strong>We will provide technical details to your web company/mail provider to allow emails to be sent on behalf of your domain.</strong></p>
+						<h3>Email Content</h3>
+						<label>Enter Custom Text (if applicable):</label>
+						<textarea rows="1"></textarea>
+						<p>* Default:<br/>
+						((Vendor))<br/><br/>
+						Your valuation has been booked for ((hh:mm)) on ((DD MMMM)) at ((Property Full Address)).<br/><br/>
+						If you have any queries or need to rearrange, please call me on ((Property Valuer)) or e-mail ((valuer email address)).<br/><br/>
+						We've also created an account for you which you can log into here.<br/><br/>
+						Kind regards<br/>
+						((Property Negotiator))</p>
+						<p>* double parentheses (()) denote where data will be used.</p>
+						<p><strong>Reapit will by default use your existing email template layout (including headers &amp; footers) and update the text accordingly.<br/><br/>
+						The second paragraph is subject to the availability of the Vendor Tracker once fully configured.
+						</strong></p>
+						<h3>Email Recipients</h3>
+						<p>It's possible to BCC (Blind Carbon Copy) the branch manager into these emails. Tick the box below if you'd like this.</p>
+						<label>Also Send to Manager</label>
+						<input type="checkbox">
+						<h3>SMS Text Message</h3>
+						<label>Enter Custom Text (if applicable):</label>
+						<textarea rows="1"></textarea>
+						<p>* Default:<br/>
+						SALES: “Your valuation with ((negotiator)) has been booked for ((date)) at ((location)). To rearrange this appointment, please call ((telephone)).”
+						<br/><br/>
+						LETTINGS: “Your lettings valuation with ((negotiator)) has been booked for ((date)) at ((location)). To rearrange this appointment, please call ((telephone)).”</p>
+						<p>* double parentheses (()) denote where data will be used.</p>
+						<p><strong>Please keep in mind this is a SMS text message and as such has some limitations.</strong></p>
+					</div>
+					<h2>Global Settings</h2>
+					<p>The appointment diary allows for negotiators/valuers to be pre-configured and added to the list, which is presented to your client, for the market appraisal to be booked.</p>
+					<div class="settingsWrapper">
+						<h3>Sales</h3>
+						<label>Job Title(s):</label>
+						<input type="text">
+						<p>Defaults:<br/>
+						Valuer, Negotiator, Property Consultant, Senior Property Consultant, Sales Negotiator, Sales Associate</p>
+						<label>Specific Negotiators:</label>
+						<input type="text">
+						<p>For this please use <strong>full names</strong> and ensure that you have at least one person from each of your offices.</p>
+					</div>
 				</div>
 				<div class="viewing">
 					<h1>viewing!</h1>
