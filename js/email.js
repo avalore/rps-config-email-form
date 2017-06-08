@@ -1,32 +1,42 @@
 "use strict";
 $(document).ready(function(){
 
-	//getting the buttons
-	var marketing = $('#marketButton'),
-		viewing = $('#viewingButton'),
-		info = $('#infoButton'),
-		examples = $('#examplesButton');
-
-	//creating a function that will slide all the other content off screen
+	//slide all the other content off screen
+	var home = $('#home');
+	var back = $('#back');
 	function slideOff(){
-		var home = $('#home');
 		$(home).animate({
 			opacity: 0,
 			transform: "translateX(5px)"
-		}, 500);
+		}, 300);
 		setTimeout(function(){
 			$(home).css('display','none');
-		}, 500);
+		}, 300);
 	};
 
-	//creating a function that slides on the new content
+	//slides on the new content
 	function slideOn(page){
-		$(page).css('display', 'block');
+		setTimeout(function(){
+			$(page).css('display', 'block');
+			$(back).css('display', 'block');
+		}, 300);
 	};
 
 	//trigger the relevant page when its button is clicked
 	$('.button').on("click", function(){
 		slideOff();
-		slideOn(this.id);
+		var pageToSlide = $('.'+this.id);
+		slideOn(pageToSlide);
+	});
+
+	//let the user go back to home
+	$(back).click(function(){
+		$(home).animate({
+			opacity: 1,
+			transform: "translateX(5px)"
+		}, 300);
+		$(home).css('display','block');
+		$('.marketing, .viewing, .information, .examples').css('display','none');
+		$(this).css('display', 'none');
 	});
 });

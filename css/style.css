@@ -73,6 +73,9 @@ body {
   color: #ffffff;
   transform: translateX(5px);
 }
-#marketing {
+.marketing,
+.viewing,
+.information,
+.examples {
   display: none;
 }
