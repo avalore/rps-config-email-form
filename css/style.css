@@ -113,12 +113,14 @@ body {
 input {
   font-family: 'Roboto', sans-serif;
 }
-input[type="submit"] {
+input[type="submit"],
+.homebutton {
   background: #6083ff !important;
   color: white !important;
   margin-top: 0 !important;
 }
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+.homebutton:hover {
   transform: translate(0, -5px) !important;
 }
 hr {
@@ -154,4 +156,7 @@ hr {
   width: auto;
   border: 0;
   box-shadow: none;
+  color: #333333;
+  font-weight: 400;
+  margin: 0 10px;
 }

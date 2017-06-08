@@ -26,15 +26,15 @@
 					</a>
 					<h1>RPS Digital Configuration</h1>
 					<p>Please fill out the relevant forms below.</p>
-					<div id="marketing" class="button">Market Appraisal Plugin</div>
-					<div id="viewing" class="button">Viewing Request Plugin</div>
+					<div id="marketing" class="button menuButton">Market Appraisal Plugin</div>
+					<div id="viewing" class="button menuButton">Viewing Request Plugin</div>
 					<p>Once you're done, click below to submit your requirements</p>
-					<input type="submit" class="button" value="Finished">
+					<input type="submit" class="button menuButton" value="Finished">
 					<hr>
 					<p>Information such as pre-requisites and advice can be found below.</p>
-					<div id="information" class="button">Support</div>
+					<div id="information" class="button menuButton">Support</div>
 					<p>If you'd like to see some examples, click below.</p>
-					<div id="examples" class="button">Examples</div>
+					<div id="examples" class="button menuButton">Examples</div>
 					<p>This form is used as part of the RPS Digital ordering process.</p>
 					<p>You can download the full document <a href="#">here</a>.</p>
 				</div>
@@ -99,11 +99,11 @@
 						<p><strong>Reapit will by default use your existing email template layout (including headers &amp; footers) and update the text accordingly.<br/><br/>
 						The second paragraph is subject to the availability of the Vendor Tracker once fully configured.
 						</strong></p>
-						<h3>Email Recipients</h3>
+						<h3>Email Recipients:</h3>
 						<p>It's possible to BCC (Blind Carbon Copy) the branch manager into these emails. Tick the box below if you'd like this.</p>
 						<label>Also Send to Manager</label>
 						<input type="checkbox">
-						<h3>SMS Text Message</h3>
+						<h3>SMS Text Message:</h3>
 						<label>Enter Custom Text (if applicable):</label>
 						<textarea rows="1"></textarea>
 						<p>* Default:<br/>
@@ -114,17 +114,59 @@
 						<p><strong>Please keep in mind this is a SMS text message and as such has some limitations.</strong></p>
 					</div>
 					<h2>Global Settings</h2>
-					<p>The appointment diary allows for negotiators/valuers to be pre-configured and added to the list, which is presented to your client, for the market appraisal to be booked.</p>
 					<div class="settingsWrapper">
-						<h3>Sales</h3>
-						<label>Job Title(s):</label>
+						<h3>Appointment Lead Time:</h3>
+						<p>This is the time before an appointment can be made. This is set to ensure an appointment cannot be made immediately.</p>
+						<label>Lead Time:</label>
 						<input type="text">
-						<p>Defaults:<br/>
-						Valuer, Negotiator, Property Consultant, Senior Property Consultant, Sales Negotiator, Sales Associate</p>
-						<label>Specific Negotiators:</label>
+						<p>Default:<br/>
+						6 hours</p>
+						<h3>Appointment Buffer</h3>
+						<p>This is used to set time before and after a pre-existing appointment to keep travel time accomodated.</p>
+						<label>Buffer Time:</label>
 						<input type="text">
-						<p>For this please use <strong>full names</strong> and ensure that you have at least one person from each of your offices.</p>
+						<p>Default:<br/>
+						30 minutes</p>
+						<h3>Default Office</h3>
+						<p>A default office is set so that if a postcode can't be infentified or is not within any office catchment area the message can be redirected to it.</p>
+						<label>Default Office:</label>
+						<input type="text">
+						<h3>Holidays</h3>
+						<p>Choose the national holidays that apply as well as add any of your own.</p>
+						<label>Company Holidays:</label>
+						<input type="text" placeholder="29/03/2018">
+						<br/>
+						<br/>
+						<label>National Holidays:</label>
+						<input type="checkbox" value="england">England &amp; Wales
+						<input type="checkbox" value="scotland">Scotland
+						<input type="checkbox" value="ireland">Northern Ireland
+						<h3>Opening Times</h3>
+						<label>Monday:</label>
+						<input type="text" placeholder="8am - 6pm">
+						<br/>
+						<br/>
+						<label>Tuesday:</label>
+						<input type="text" placeholder="8am - 6pm">
+						<br/>
+						<br/>
+						<label>Wednesday:</label>
+						<input type="text" placeholder="8am - 6pm">
+						<br/><br/>
+						<label>Thursday:</label>
+						<input type="text" placeholder="8am - 6pm">
+						<br/><br/>
+						<label>Friday:</label>
+						<input type="text" placeholder="8am - 6pm">
+						<br/><br/>
+						<label>Saturday:</label>
+						<input type="text" placeholder="10am - 5pm">
+						<br/><br/>
+						<label>Sunday:</label>
+						<input type="text" placeholder="Closed">
 					</div>
+					<p>To submit your configuration, return to the homepage</p>
+					<div class="homebutton button">Save</div>
 				</div>
 				<div class="viewing">
 					<h1>viewing!</h1>
