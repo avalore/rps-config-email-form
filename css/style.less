@@ -1,0 +1,73 @@
+@reapitBlue: rgba(96,131,255,1);
+@dark: #333333;
+
+body{
+	font-family: 'Roboto', sans-serif;
+	background: rgb(62,84,165); /* Old browsers */
+	background: -moz-linear-gradient(45deg, rgba(62,84,165,1) 0%, @reapitBlue 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, rgba(62,84,165,1) 0%,@reapitBlue 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(-135deg, rgba(62,84,165,1) 0%,@reapitBlue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e54a5', endColorstr='#6083ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.container{
+	width: 700px;
+	position: relative;
+	margin: 50px auto;
+	padding: 20px 36px;
+	text-align: center;
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+	#back{
+		position: absolute;
+		top: 30px;
+		left: 30px;
+		color: @reapitBlue;
+		font-size: 20px;
+		display: none;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	img{
+		width: 180px;
+		margin: 20px;
+	}
+	h1{
+		margin: 0;
+		font-weight: 400;
+		font-size: 30px;
+		margin: 10px 0;
+		color: @dark;
+	}
+	p{
+		margin: 24px;
+		font-weight: 300;
+		font-size: 20px;
+		color: @dark;
+		a{
+			color: @reapitBlue;
+			text-decoration: none;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	.button{
+		width: 250px;
+		font-size: 20px;
+		font-weight: 300;
+		color: @reapitBlue;
+		border: 1px solid @reapitBlue;
+		border-radius: 10px;
+		padding: 10px;
+		margin: 30px auto;
+		transition: all .3s ease-in-out;
+		&:hover{
+			cursor: pointer;
+			background-color: @reapitBlue;
+			color: #ffffff;
+			transform: translateX(5px);
+		}
+	}
+}

@@ -1,0 +1,75 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #3e54a5;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #3e54a5 0%, #6083ff 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #3e54a5 0%, #6083ff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(-135deg, #3e54a5 0%, #6083ff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3e54a5', endColorstr='#6083ff', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+.container {
+  width: 700px;
+  position: relative;
+  margin: 50px auto;
+  padding: 20px 36px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+.container #back {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: #6083ff;
+  font-size: 20px;
+  display: none;
+}
+.container #back:hover {
+  cursor: pointer;
+}
+.container img {
+  width: 180px;
+  margin: 20px;
+}
+.container h1 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 30px;
+  margin: 10px 0;
+  color: #333333;
+}
+.container p {
+  margin: 24px;
+  font-weight: 300;
+  font-size: 20px;
+  color: #333333;
+}
+.container p a {
+  color: #6083ff;
+  text-decoration: none;
+}
+.container p a:hover {
+  text-decoration: underline;
+}
+.container .button {
+  width: 250px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #6083ff;
+  border: 1px solid #6083ff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 30px auto;
+  transition: all 0.3s ease-in-out;
+}
+.container .button:hover {
+  cursor: pointer;
+  background-color: #6083ff;
+  color: #ffffff;
+  transform: translateX(5px);
+}
