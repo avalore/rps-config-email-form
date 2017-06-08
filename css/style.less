@@ -11,6 +11,7 @@ body{
 }
 .container{
 	width: 700px;
+	max-width: 90%;
 	position: relative;
 	margin: 50px auto;
 	padding: 20px 36px;
@@ -20,13 +21,16 @@ body{
 	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
 	#back{
 		position: absolute;
-		top: 30px;
-		left: 30px;
+		top: 20px;
+		left: 20px;
 		color: @reapitBlue;
 		font-size: 20px;
 		display: none;
+		padding: 10px;
+		transition: all .2s ease-in-out;
 		&:hover{
 			cursor: pointer;
+			left: 18px;
 		}
 	}
 	img{
@@ -61,6 +65,7 @@ body{
 		border: 1px solid @reapitBlue;
 		border-radius: 10px;
 		padding: 10px;
+		background: white;
 		margin: 30px auto;
 		transition: all .3s ease-in-out;
 		&:hover{
@@ -71,7 +76,32 @@ body{
 		}
 	}
 }
+#home{
+	transition: all .3s ease-in-out;
+	webkit-transition: all .3s ease-in-out;
+	opacity: 1;
+}
+.slide{
+	-webkit-transform: translate(-150px) !important;
+	transform: translate(-150px) !important;
+	opacity: 0 !important;
+}
 //global forms
 .marketing, .viewing, .information, .examples{
 	display: none;
+}
+input{
+	font-family: 'Roboto', sans-serif; 
+}
+input[type="submit"]{
+	background: @reapitBlue !important;
+	color: white !important;
+	margin-top: 0 !important;
+	&:hover{
+		transform: translate(0, -5px) !important;
+	}
+}
+hr{
+	border: 1px solid @reapitBlue;
+	margin: 0;
 }

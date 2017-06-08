@@ -12,37 +12,50 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
+
+		<!-- main container -->
 		<div class="container">
-			<i id="back" class="fa fa-chevron-left" aria-hidden="true"></i>
-			<div id="home">
-				<a href="http://www.reapit.com/" target="_blank">
-					<img src="reapit-logo.png" alt="Reapit Logo">
-				</a>
-				<h1>RPS Digital Configuration</h1>
-				<p>Please fill out the relevant forms below.</p>
-				<div id="marketing" class="button">Market Appraisal Plugin</div>
-				<div id="viewing" class="button">Viewing Request Plugin</div>
-				<p>You can refer below for information including pre-requisites and advice.</p>
-				<div id="information" class="button">Information</div>
-				<p>If you'd like to see examples of the product, click below.</p>
-				<div id="examples" class="button">Examples</div>
-				<p>This form is used as part of the RPS Digital ordering process.</p>
-				<p>You can download the full document <a href="#">here</a>.</p>
-			</div>
-			<div class="sections">
-				<div class="marketing">
-					<h1>marketing!</h1>
+			<!-- begin form -->
+			<form action="">
+
+				<!-- this is the button that appears to go back to home -->
+				<i id="back" class="fa fa-chevron-left" aria-hidden="true"></i>
+				<div id="home">
+					<a href="http://www.reapit.com/" target="_blank">
+						<img src="reapit-logo.png" alt="Reapit Logo">
+					</a>
+					<h1>RPS Digital Configuration</h1>
+					<p>Please fill out the relevant forms below.</p>
+					<div id="marketing" class="button">Market Appraisal Plugin</div>
+					<div id="viewing" class="button">Viewing Request Plugin</div>
+					<p>Once you're done, click to submit</p>
+					<input type="submit" class="button" value="Finished">
+					<hr>
+					<p>You can refer below for information including pre-requisites and advice.</p>
+					<div id="information" class="button">Information</div>
+					<p>If you'd like to see examples of the product, click below.</p>
+					<div id="examples" class="button">Examples</div>
+					<p>This form is used as part of the RPS Digital ordering process.</p>
+					<p>You can download the full document <a href="#">here</a>.</p>
 				</div>
-				<div class="viewing">
-					<h1>viewing!</h1>
+
+				<!-- this is the placeholder for the different form sections -->
+
+				<div class="sections">
+					<div class="marketing">
+						<h1>marketing!</h1>
+					</div>
+					<div class="viewing">
+						<h1>viewing!</h1>
+					</div>
+					<div class="information">
+						<h1>information!</h1>
+					</div>
+					<div class="examples">
+						<h1>examples!</h1>
+					</div>
 				</div>
-				<div class="information">
-					<h1>information!</h1>
-				</div>
-				<div class="examples">
-					<h1>examples!</h1>
-				</div>
-			</div>
+			</form>
 		</div>
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/email.js"></script>	

@@ -13,6 +13,7 @@ body {
 }
 .container {
   width: 700px;
+  max-width: 90%;
   position: relative;
   margin: 50px auto;
   padding: 20px 36px;
@@ -23,14 +24,17 @@ body {
 }
 .container #back {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 20px;
   color: #6083ff;
   font-size: 20px;
   display: none;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
 }
 .container #back:hover {
   cursor: pointer;
+  left: 18px;
 }
 .container img {
   width: 180px;
@@ -64,6 +68,7 @@ body {
   border: 1px solid #6083ff;
   border-radius: 10px;
   padding: 10px;
+  background: white;
   margin: 30px auto;
   transition: all 0.3s ease-in-out;
 }
@@ -73,9 +78,34 @@ body {
   color: #ffffff;
   transform: translateX(5px);
 }
+#home {
+  transition: all 0.3s ease-in-out;
+  webkit-transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+.slide {
+  -webkit-transform: translate(-150px) !important;
+  transform: translate(-150px) !important;
+  opacity: 0 !important;
+}
 .marketing,
 .viewing,
 .information,
 .examples {
   display: none;
+}
+input {
+  font-family: 'Roboto', sans-serif;
+}
+input[type="submit"] {
+  background: #6083ff !important;
+  color: white !important;
+  margin-top: 0 !important;
+}
+input[type="submit"]:hover {
+  transform: translate(0, -5px) !important;
+}
+hr {
+  border: 1px solid #6083ff;
+  margin: 0;
 }

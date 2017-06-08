@@ -5,10 +5,7 @@ $(document).ready(function(){
 	var home = $('#home');
 	var back = $('#back');
 	function slideOff(){
-		$(home).animate({
-			opacity: 0,
-			transform: "translateX(5px)"
-		}, 300);
+		$(home).addClass('slide')
 		setTimeout(function(){
 			$(home).css('display','none');
 		}, 300);
@@ -31,11 +28,7 @@ $(document).ready(function(){
 
 	//let the user go back to home
 	$(back).click(function(){
-		$(home).animate({
-			opacity: 1,
-			transform: "translateX(5px)"
-		}, 300);
-		$(home).css('display','block');
+		$(home).css('display','block').removeClass('slide');
 		$('.marketing, .viewing, .information, .examples').css('display','none');
 		$(this).css('display', 'none');
 	});
