@@ -12,7 +12,7 @@ body {
   /* IE6-9 fallback on horizontal gradient */
 }
 .container {
-  width: 700px;
+  width: 800px;
   max-width: 90%;
   position: relative;
   margin: 50px auto;
@@ -24,7 +24,7 @@ body {
 }
 .container #back {
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 20px;
   color: #6083ff;
   font-size: 20px;
@@ -47,18 +47,26 @@ body {
   margin: 10px 0;
   color: #333333;
 }
-.container p {
+.container p,
+.container label {
   margin: 24px;
   font-weight: 300;
   font-size: 20px;
   color: #333333;
 }
-.container p a {
+.container p a,
+.container label a {
   color: #6083ff;
   text-decoration: none;
 }
-.container p a:hover {
+.container p a:hover,
+.container label a:hover {
   text-decoration: underline;
+}
+.container h2,
+.container h3 {
+  font-weight: 400;
+  color: #333333;
 }
 .container .button {
   width: 250px;
@@ -108,4 +116,22 @@ input[type="submit"]:hover {
 hr {
   border: 1px solid #6083ff;
   margin: 0;
+}
+.settingsWrapper {
+  text-align: left;
+}
+.settingsWrapper p {
+  font-size: 15px;
+}
+.settingsWrapper input {
+  width: 40%;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 15px;
+}
+.settingsWrapper input:hover {
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }

@@ -22,6 +22,9 @@ $(document).ready(function(){
 	//trigger the relevant page when its button is clicked
 	$('.button').on("click", function(){
 		slideOff();
+		
+		//get the id of the button that was clicked and add it as a class name
+		//the button ids match the class names of the different forms they open
 		var pageToSlide = $('.'+this.id);
 		slideOn(pageToSlide);
 	});
