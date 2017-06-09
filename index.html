@@ -71,7 +71,7 @@
 						<p>For this please use <strong>full names</strong> and ensure that you have at least one person from each of your offices.</p>
 					</div>
 					<h2 id="notifDiv">Notifications</h2>
-					<p>When an appoitnment is being booked, the following notification events are triggered:</p>
+					<p>When an appointment is being booked, the following notification events are triggered:</p>
 					<div class="settingsWrapper">
 						<h3>On Screen Notification</h3>
 						<p>Default: "To book a valuation, please enter your e-mail and postcode below".</p>
@@ -102,10 +102,10 @@
 						<p><strong>Reapit will by default use your existing email template layout (including headers &amp; footers) and update the text accordingly.<br/><br/>
 						The second paragraph is subject to the availability of the Vendor Tracker once fully configured.
 						</strong></p>
-						<h3>Email Recipients:</h3>
+						<h3>Email Recipients</h3>
 						<p>It's possible to BCC (Blind Carbon Copy) the branch manager into these emails. Tick the box below if you'd like this.</p>
 						<input type="checkbox" value="bccManager">Also send to manager
-						<h3>SMS Text Message:</h3>
+						<h3>SMS Text Message</h3>
 						<label>Sales:</label>
 						<textarea rows="1"></textarea>
 						<p>* Default:<br/>
@@ -119,7 +119,7 @@
 					</div>
 					<h2 id="glosetDiv">Global Settings</h2>
 					<div class="settingsWrapper">
-						<h3>Appointment Lead Time:</h3>
+						<h3>Appointment Lead Time</h3>
 						<p>The time before an appointment can be made. This is set to ensure an appointment cannot be made immediately.</p>
 						<label>Lead Time:</label>
 						<input type="text">
@@ -172,7 +172,72 @@
 					<div class="homebutton button">Save</div>
 				</div>
 				<div class="viewing">
-					<h1>viewing!</h1>
+					<h1>Viewing Request Plugin</h1>
+					<h3>Quick Navigation</h3>
+					<div class="navigation">
+						<a href="#" id="viewValueScroll">Viewer Diaries</a>
+						<a href="#" id="viewNotifScroll">Viewing Notifications</a>
+					</div>
+					<h2 id="viewValueDiv">Viewer Diaries</h2>
+					<p>The viewing plugin allows the option to create viewing appointment requests directly into RPS for a specific property.</p>
+					<p>The diary can be set up in the following three methods:</p>
+					<p>Property Negotiator - The property manager diary is presented with available slots in their diary.</p>
+					<p>Job Title(s) - The diary is made up of individuals with specific job title(s).</p>
+					<p>Specific Negotatiors - Diary is preconfigured with a pool of specific negotiators.</p>
+					<div class="settingsWrapper">
+						<p>Please select the option you would like, and enter the relevant text if required.</p>
+						<h3>Diary Options</h3>
+						<label>Property Negotiator</label>
+						<input type="checkbox" value="viewingNegoDefault">Keep default
+						<br/><br/>
+						<label>Job Title(s):</label>
+						<input type="text">
+						<p>Defaults:<br/>
+						Valuer, Negotiator, Property Consultant, Senior Property Consultant, Sales Negotiator, Sales Associate</p>
+						<label>Specific Negotiators:</label>
+						<input type="text">
+						<p>For this please use <strong>full names</strong> and ensure that you have at least one person from each of your offices.</p>
+					</div>
+					<h2 id="viewNotifDiv">Notifications</h2>
+					<p>When an appointment is being booked, the following notification events are triggered:</p>
+					<div class="settingsWrapper">
+						<h3>On Screen Notification</h3>
+						<p>Default: "To book a viewing, please enter your e-mail below".</p>
+						<p><strong>If you would like this changed you will need to review with your web company.</strong></p>
+						<h3>Email Subject</h3>
+						<label>Subject Line:</label>
+						<input type="text">
+						<p>* Default:<br/>
+						“Your Viewing Request for ((location))”</p>
+						<h3>Reply Address</h3>
+						<label>Please Specify Address:</label>
+						<input type="text" placeholder="no-reply@client-website.co.uk">
+						<p><strong>We will provide technical details to your web company/mail provider to allow emails to be sent on behalf of your domain.</strong></p>
+						<h3>Email Content</h3>
+						<label>Enter Custom Text (if applicable):</label>
+						<textarea rows="1"></textarea>
+						<p>* Default:<br/>
+						Your viewing at ((Property Full Address)) has been booked for ((hh:mm)) on ((DD MMMM)).<br/><br/>
+						If you have any queries or need to rearrange, please call me on ((Property Manager Number)) or e-mail ((Property Manager Email Address)).<br/><br/>
+						We've also created an account for you which you can log into here.<br/><br/>
+						Kind regards<br/>
+						((Property Negotiator))</p>
+						<p><strong>Reapit will by default use your existing email template layout (including headers &amp; footers) and update the text accordingly.<br/><br/>
+						The second paragraph is subject to the availability of the Applicant Tracker once fully configured.
+						</strong></p>
+						<h3>Email Recipients</h3>
+						<p>It's possible to BCC (Blind Carbon Copy) the valuer into these emails. Tick the box below if you'd like this.</p>
+						<input type="checkbox" value="bccManager">Also send to manager
+						<h3>SMS Text Message</h3>
+						<label>Message:</label>
+						<textarea rows="1"></textarea>
+						<p>* Default:<br/>
+						“Your viewing at ((location)) has been booked with ((negotiator)) for ((date)). To rearrange this appointment, please call ((telephone)).”</p>
+						<p><strong>Please keep in mind this is an SMS text message and as such has some limitations.</strong></p>
+						<p>* double parentheses (()) denote where data will be used.</p>
+					</div>
+					<p>To submit your configuration, return to the homepage</p>
+					<div class="homebutton button">Save</div>
 				</div>
 				<div class="information">
 					<h1>information!</h1>
