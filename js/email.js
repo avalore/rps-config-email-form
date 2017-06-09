@@ -12,6 +12,7 @@ $(document).ready(function(){
 
 	//slides on the new content
 	function slideOn(page){
+
 		setTimeout(function(){
 			$(page).css('display', 'block');
 			$('#back').css('display', 'block');
@@ -33,5 +34,19 @@ $(document).ready(function(){
 		$(home).css('display','block').removeClass('slide');
 		$('.marketing, .viewing, .information, .examples, #back').css('display','none');
 	});
+
+	//smooth scrolling function 
+	function smoothScroll(button, div){
+		button.click(function(){
+			$('html, body').animate({
+				scrollTop: div.offset().top - 10
+			});
+		});
+	}
+
+	smoothScroll($('#valueScroll'),$('#valueDiv'));
+	smoothScroll($('#notifScroll'),$('#notifDiv'));
+	smoothScroll($('#glosetScroll'),$('#glosetDiv'));
+
 
 });

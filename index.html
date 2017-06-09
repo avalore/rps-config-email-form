@@ -30,7 +30,7 @@
 					<div id="viewing" class="button menuButton">Viewing Request Plugin</div>
 					<p>Once you're done, click below to submit your requirements</p>
 					<input type="submit" class="button menuButton" value="Finished">
-					<hr>
+					<div class="line"></div>
 					<p>Information such as pre-requisites and advice can be found below.</p>
 					<div id="information" class="button menuButton">Support</div>
 					<p>If you'd like to see some examples, click below.</p>
@@ -44,7 +44,13 @@
 				<div class="marketing">
 					<h1>Market Appraisal Plugin</h1>
 					<p>This plugin provides the ability to book an appointment directly into RPS based on available timeslots. The appointment process can create a new contact if there isn't already one.</p>
-					<h2>Valuer Diaries</h2>
+					<h3>Quick Navigation</h3>
+					<div class="navigation">
+						<a href="#" id="valueScroll">Valuer Diaries</a>
+						<a href="#" id="notifScroll">Notifications</a>
+						<a href="#" id="glosetScroll">Global Settings</a>
+					</div>
+					<h2 id="valueDiv">Valuer Diaries</h2>
 					<p>The appointment diary allows for negotiators/valuers to be pre-configured and added to the list, which is presented to your client, for the market appraisal to be booked.</p>
 					<div class="settingsWrapper">
 						<h3>Sales</h3>
@@ -64,7 +70,7 @@
 						<input type="text">
 						<p>For this please use <strong>full names</strong> and ensure that you have at least one person from each of your offices.</p>
 					</div>
-					<h2>Notifications</h2>
+					<h2 id="notifDiv">Notifications</h2>
 					<p>When an appoitnment is being booked, the following notification events are triggered:</p>
 					<div class="settingsWrapper">
 						<h3>On Screen Notification</h3>
@@ -81,9 +87,7 @@
 						“Your Lettings Valuation Request”</p>
 						<h3>Reply Address</h3>
 						<label>Please Specify Address:</label>
-						<input type="text">
-						<p>Default:<br/>
-						no-reply@client-website.co.uk</p>
+						<input type="text" placeholder="no-reply@client-website.co.uk">
 						<p><strong>We will provide technical details to your web company/mail provider to allow emails to be sent on behalf of your domain.</strong></p>
 						<h3>Email Content</h3>
 						<label>Enter Custom Text (if applicable):</label>
@@ -95,7 +99,6 @@
 						We've also created an account for you which you can log into here.<br/><br/>
 						Kind regards<br/>
 						((Property Negotiator))</p>
-						<p>* double parentheses (()) denote where data will be used.</p>
 						<p><strong>Reapit will by default use your existing email template layout (including headers &amp; footers) and update the text accordingly.<br/><br/>
 						The second paragraph is subject to the availability of the Vendor Tracker once fully configured.
 						</strong></p>
@@ -111,19 +114,19 @@
 						<textarea rows="1"></textarea>
 						<p>* Default:<br/>
 						“Your lettings valuation with ((negotiator)) has been booked for ((date)) at ((location)). To rearrange this appointment, please call ((telephone)).”</p>
+						<p><strong>Please keep in mind this is an SMS text message and as such has some limitations.</strong></p>
 						<p>* double parentheses (()) denote where data will be used.</p>
-						<p><strong>Please keep in mind this is a SMS text message and as such has some limitations.</strong></p>
 					</div>
-					<h2>Global Settings</h2>
+					<h2 id="glosetDiv">Global Settings</h2>
 					<div class="settingsWrapper">
 						<h3>Appointment Lead Time:</h3>
-						<p>This is the time before an appointment can be made. This is set to ensure an appointment cannot be made immediately.</p>
+						<p>The time before an appointment can be made. This is set to ensure an appointment cannot be made immediately.</p>
 						<label>Lead Time:</label>
 						<input type="text">
 						<p>Default:<br/>
 						6 hours</p>
 						<h3>Appointment Buffer</h3>
-						<p>This is used to set time before and after a pre-existing appointment to keep travel time accomodated.</p>
+						<p>Save time before and after pre-existing appointments to keep travel time accomodated.</p>
 						<label>Buffer Time:</label>
 						<input type="text">
 						<p>Default:<br/>
@@ -133,9 +136,8 @@
 						<label>Default Office:</label>
 						<input type="text">
 						<h3>Holidays</h3>
-						<p>Choose the national holidays that apply as well as add any of your own.</p>
 						<label>Company Holidays:</label>
-						<input type="text" placeholder="29/03/2018">
+						<input type="text" placeholder="29/03/2018, 18/07/2020">
 						<br/>
 						<br/>
 						<label>National Holidays:</label>
@@ -161,7 +163,7 @@
 						<input type="text" placeholder="8am - 6pm">
 						<br/><br/>
 						<label>Saturday:</label>
-						<input type="text" placeholder="10am - 5pm">
+						<input type="text" placeholder="9am - 5pm">
 						<br/><br/>
 						<label>Sunday:</label>
 						<input type="text" placeholder="Closed">
