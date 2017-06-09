@@ -21,7 +21,7 @@ $(document).ready(function(){
 	//let the user go back to home
 	$('.homebutton, #back').click(function(){
 		$(home).css('display','block').removeClass('slide');
-		$('.marketing, .viewing, .information, .examples, #back').css('display','none');
+		$('.marketing, .viewing, .information, #back').css('display','none');
 	});
 
 	//smooth scrolling function 
@@ -50,5 +50,20 @@ $(document).ready(function(){
 		var pageToSlide = $('.'+this.id);
 		slideOn(pageToSlide);
 	});
+
+	function display(button, div){
+		button.click(function(){
+			if(div.css('display') == 'none'){
+				div.css('display','flex');
+				button.html('Hide <i style="transform: rotate(90deg);" class="fa fa-chevron-right" aria-hidden="true"></i>');
+			} else{
+				div.css('display', 'none');
+				button.html('Show <i class="fa fa-chevron-right" aria-hidden="true"></i>');
+			}
+		});
+	}
+
+	display($('#viewingExamplesShow'),$('.viewingGrid'));
+	display($('#rpsExamplesShow'),$('.rpsGrid'));
 
 });
