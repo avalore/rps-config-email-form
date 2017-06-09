@@ -69,7 +69,7 @@ $(document).ready(function(){
 
 	//modal image function
 	function toggleModal(image){
-		var img = image.id;
+		var img = "test";
 		var modal = $('<div class="modal"><img src="'+ img + '.jpg"></div>');
 		image.click(function(){
 			$('body').append(modal);
