@@ -51,6 +51,7 @@ $(document).ready(function(){
 		slideOn(pageToSlide);
 	});
 
+	//dropdown list function
 	function display(button, div){
 		button.click(function(){
 			if(div.css('display') == 'none'){
@@ -65,5 +66,22 @@ $(document).ready(function(){
 
 	display($('#viewingExamplesShow'),$('.viewingGrid'));
 	display($('#rpsExamplesShow'),$('.rpsGrid'));
+
+	//modal image function
+	function toggleModal(image){
+		var img = image.id;
+		var modal = $('<div class="modal"><img src="'+ img + '.jpg"></div>');
+		image.click(function(){
+			$('body').append(modal);
+			if($(modal).css('display') == 'none'){
+				$(modal).css('display', 'block');
+			}
+		});
+		$(modal).click(function(){
+			$(this).css('display','none');
+		});
+	}
+
+	toggleModal($('.item'));
 
 });
