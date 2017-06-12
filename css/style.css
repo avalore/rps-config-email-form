@@ -16,7 +16,7 @@ body {
   width: 800px;
   max-width: 90%;
   position: relative;
-  margin: 50px auto;
+  margin: 50px auto 0;
   padding: 20px 36px;
   text-align: center;
   background-color: #ffffff;
@@ -203,7 +203,7 @@ hr {
   color: white;
   text-align: center;
   font-size: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .grid {
   display: flex;
@@ -216,13 +216,65 @@ hr {
   margin: 5px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.grid .item:first-child {
-  background-image: url('../apraisal01.jpg');
+  background-size: cover;
 }
 .grid .item:hover {
   cursor: pointer;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+.appraisalGrid .item:first-child {
+  background-image: url('../img/appraisal01.png');
+}
+.appraisalGrid .item:nth-child(2) {
+  background-image: url('../img/appraisal02.png');
+}
+.appraisalGrid .item:nth-child(3) {
+  background-image: url('../img/appraisal03.png');
+}
+.appraisalGrid .item:nth-child(4) {
+  background-image: url('../img/appraisal04.png');
+}
+.appraisalGrid .item:nth-child(5) {
+  background-image: url('../img/appraisal05.png');
+}
+.appraisalGrid .item:nth-child(6) {
+  background-image: url('../img/appraisal06.png');
+}
+.viewingGrid .item:first-child {
+  background-image: url('../img/viewing01.png');
+}
+.viewingGrid .item:nth-child(2) {
+  background-image: url('../img/viewing02.png');
+}
+.viewingGrid .item:nth-child(3) {
+  background-image: url('../img/viewing03.png');
+}
+.viewingGrid .item:nth-child(4) {
+  background-image: url('../img/viewing04.png');
+}
+.viewingGrid .item:nth-child(5) {
+  background-image: url('../img/viewing05.png');
+}
+.viewingGrid .item:nth-child(6) {
+  background-image: url('../img/viewing06.png');
+}
+.rpsGrid .item:first-child {
+  background-image: url('../img/rps01.png');
+}
+.rpsGrid .item:nth-child(2) {
+  background-image: url('../img/rps02.png');
+}
+.rpsGrid .item:nth-child(3) {
+  background-image: url('../img/rps03.png');
+}
+.rpsGrid .item:nth-child(4) {
+  background-image: url('../img/rps04.png');
+}
+.rpsGrid .item:nth-child(5) {
+  background-image: url('../img/rps05.png');
+}
+.rpsGrid .item:nth-child(6) {
+  background-image: url('../img/rps06.png');
 }
 .fa-chevron-right {
   margin-left: 5px;

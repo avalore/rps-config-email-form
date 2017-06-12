@@ -29,7 +29,7 @@ $(document).ready(function(){
 		button.click(function(){
 			$('html, body').animate({
 				scrollTop: div.offset().top - 10
-			}, 200);
+			}, 300);
 		});
 	};
 
@@ -69,16 +69,17 @@ $(document).ready(function(){
 
 	//modal image function
 	function toggleModal(image){
-		var img = "test";
-		var modal = $('<div class="modal"><img src="'+ img + '.jpg"></div>');
+		var modal = $('<div class="modal"></div>');
 		image.click(function(){
+			var img = $('<img src="img/' + this.id + '.png">');
+			$(modal).append(img);
 			$('body').append(modal);
 			if($(modal).css('display') == 'none'){
 				$(modal).css('display', 'block');
 			}
 		});
 		$(modal).click(function(){
-			$(this).css('display','none');
+			$(this).css('display','none').empty();
 		});
 	}
 
