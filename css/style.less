@@ -228,44 +228,50 @@ hr{
 		background-image: url('../img/appraisal06.png');
 	}
 }
-.viewingGrid .item{
-	&:first-child{
-		background-image: url('../img/viewing01.png');
-	}
-	&:nth-child(2){
-		background-image: url('../img/viewing02.png');
-	}
-	&:nth-child(3){
-		background-image: url('../img/viewing03.png');
-	}
-	&:nth-child(4){
-		background-image: url('../img/viewing04.png');
-	}
-	&:nth-child(5){
-		background-image: url('../img/viewing05.png');
-	}
-	&:nth-child(6){
-		background-image: url('../img/viewing06.png');
+.viewingGrid{ 
+	display: none;
+	.item{
+		&:first-child{
+			background-image: url('../img/viewing01.png');
+		}
+		&:nth-child(2){
+			background-image: url('../img/viewing02.png');
+		}
+		&:nth-child(3){
+			background-image: url('../img/viewing03.png');
+		}
+		&:nth-child(4){
+			background-image: url('../img/viewing04.png');
+		}
+		&:nth-child(5){
+			background-image: url('../img/viewing05.png');
+		}
+		&:nth-child(6){
+			background-image: url('../img/viewing06.png');
+		}
 	}
 }
-.rpsGrid .item{
-	&:first-child{
-		background-image: url('../img/rps01.png');
-	}
-	&:nth-child(2){
-		background-image: url('../img/rps02.png');
-	}
-	&:nth-child(3){
-		background-image: url('../img/rps03.png');
-	}
-	&:nth-child(4){
-		background-image: url('../img/rps04.png');
-	}
-	&:nth-child(5){
-		background-image: url('../img/rps05.png');
-	}
-	&:nth-child(6){
-		background-image: url('../img/rps06.png');
+.rpsGrid{ 
+	display: none;
+	.item{
+		&:first-child{
+			background-image: url('../img/rps01.png');
+		}
+		&:nth-child(2){
+			background-image: url('../img/rps02.png');
+		}
+		&:nth-child(3){
+			background-image: url('../img/rps03.png');
+		}
+		&:nth-child(4){
+			background-image: url('../img/rps04.png');
+		}
+		&:nth-child(5){
+			background-image: url('../img/rps05.png');
+		}
+		&:nth-child(6){
+			background-image: url('../img/rps06.png');
+		}
 	}
 }
 .fa-chevron-right{
@@ -281,11 +287,9 @@ hr{
 		transform: rotate(90deg);
 	}
 }
-.viewingGrid, .rpsGrid{
-	display: none;
-}
 .modal{
 	position: fixed;
+	overflow-y: auto;
 	top: 0;
 	bottom: 0;
 	right: 0;
@@ -293,6 +297,6 @@ hr{
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.7);
 	img{
-		margin-top: 50px;
+		margin: 25px 0;
 	}
 }

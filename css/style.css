@@ -240,6 +240,9 @@ hr {
 .appraisalGrid .item:nth-child(6) {
   background-image: url('../img/appraisal06.png');
 }
+.viewingGrid {
+  display: none;
+}
 .viewingGrid .item:first-child {
   background-image: url('../img/viewing01.png');
 }
@@ -257,6 +260,9 @@ hr {
 }
 .viewingGrid .item:nth-child(6) {
   background-image: url('../img/viewing06.png');
+}
+.rpsGrid {
+  display: none;
 }
 .rpsGrid .item:first-child {
   background-image: url('../img/rps01.png');
@@ -289,12 +295,9 @@ hr {
 .dropdownButton:hover > .fa-chevron-right {
   transform: rotate(90deg);
 }
-.viewingGrid,
-.rpsGrid {
-  display: none;
-}
 .modal {
   position: fixed;
+  overflow-y: auto;
   top: 0;
   bottom: 0;
   right: 0;
@@ -303,5 +306,5 @@ hr {
   background-color: rgba(0, 0, 0, 0.7);
 }
 .modal img {
-  margin-top: 50px;
+  margin: 25px 0;
 }
