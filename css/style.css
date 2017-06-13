@@ -303,8 +303,16 @@ hr {
   right: 0;
   left: 0;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 .modal img {
   margin: 25px 0;
+}
+.modal .caption {
+  color: white;
+  font-size: 20px;
+  width: 750px;
+  max-width: 90%;
+  margin: 0 auto 50px;
+  font-weight: 400;
 }
