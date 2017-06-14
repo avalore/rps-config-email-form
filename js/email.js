@@ -1,37 +1,37 @@
 "use strict";
 $(document).ready(function(){
 
-	//slide all the other content off screen
-	var home = $('#home');
+	//slide all the home content off screen
 	function slideOff(){
-		$(home).addClass('slide')
+		$('.marketing, .viewing, .information').css('display', 'none');
+		$('#home').addClass('slide')
 		setTimeout(function(){
-			$(home).css('display','none');
+			$('#home').css('display','none');
 		}, 300);
-	};
+	}
 
-	//slides on the new content
-	function slideOn(page){
+	//go to new content
+	function goTo(page){
 		setTimeout(function(){
 			$(page).css('display', 'block');
 			$('#back').css('display', 'block');
 		}, 300);
-	};
+	}
 
 	//let the user go back to home
 	$('.homebutton, #back').click(function(){
-		$(home).css('display','block').removeClass('slide');
+		$('#home').css('display','block').removeClass('slide');
 		$('.marketing, .viewing, .information, #back').css('display','none');
 	});
 
-	//smooth scrolling function 
+	//smooth scrolling 
 	function smoothScroll(button, div){
 		button.click(function(){
 			$('html, body').animate({
 				scrollTop: div.offset().top - 10
 			}, 300);
 		});
-	};
+	}
 
 	smoothScroll($('#valueScroll'),$('#valueDiv'));
 	smoothScroll($('#notifScroll'),$('#notifDiv'));
@@ -44,14 +44,24 @@ $(document).ready(function(){
 	//trigger the relevant page when its button is clicked
 	$('.menuButton').on("click", function(){
 		slideOff();
-
-		//get the id of the button that was clicked and add it as a class name
-		//the button ids match the class names of the different forms they open
-		var pageToSlide = $('.'+this.id);
-		slideOn(pageToSlide);
+		var getPage = $('.'+this.id);
+		goTo(getPage);
 	});
 
-	//dropdown list function
+	function goToPage(name, page){
+		name.click(function(){
+			slideOff();
+			goTo(page);
+		});
+	}
+
+	goToPage($('#appraisalFooterLink'), $('.marketing'));
+	goToPage($('#viewingFooterLink'), $('.viewing'));
+	goToPage($('#supportFooterLink'), $('.information'));
+	// goToPage($('.menuButton'), $('.'+this.id));
+
+
+	//dropdown list 
 	function display(button, div){
 		button.click(function(){
 			if(div.css('display') == 'none'){
@@ -67,7 +77,7 @@ $(document).ready(function(){
 	display($('#viewingExamplesShow'),$('.viewingGrid'));
 	display($('#rpsExamplesShow'),$('.rpsGrid'));
 
-	//modal image function
+	//modal image 
 	function toggleModal(image){
 		var modal = $('<div class="modal"></div>');
 		image.click(function(){
@@ -79,14 +89,26 @@ $(document).ready(function(){
 				'This is the screen that is presented after a user clicks the "Book a Valuation" button.<br/><br/>They must fill in their personal details before seeing the list of available appointments.');
 			$('.appraisal02').html(
 				'Once there is a valid post code match against your offices, the user is presented with a diary screen where unavailable times are not visible.<br/><br/>National holidays and company event days can be booked out by default to ensure appointments are not made on these days.');
-			$('.appraisal03').html(
+			$('.appraisal03, .viewing03').html(
 				'As soon as an appointment slot has been selected, the user will be requested for further details.');
-			$('.appraisal04').html(
-				'Here is an example of how a successful appointment booking looks.');
-			$('.appraisal05').html(
+			$('.appraisal04, .viewing04').html(
+				'Here is an example of how a successful booking looks.');
+			$('.appraisal05, .viewing05').html(
 				'The email the client receieves as confirmation.');
 			$('.appraisal06').html(
 				'The SMS message the client receieves as confirmation.');
+			$('.viewing01').html(
+				'This is the screen that is presented after a user clicks the "Book a Viewing" button.');
+			$('.viewing02').html(
+				'The viewer is shown available diary entries based on configuration. This is only for property managers, job title specific negotiators or specific negotiators.');
+			$('.rps01').html(
+				'Here is an example of the task being created and alerted for an appointment on the organiser screen.');
+			$('.rps02').html(
+				'Here is an example of the diary entry being created.');
+			$('.rps03').html(
+				'Here is an example of the viewing reminder being created on the organiser screen.');
+			$('.rps04').html(
+				'Finally here is the applicant being created in RPS.');
 			if($(modal).css('display') == 'none'){
 				$(modal).css('display', 'block');
 			}
