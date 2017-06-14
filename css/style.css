@@ -173,6 +173,7 @@ hr {
 .footer {
   margin: 0 auto;
   width: 870px;
+  max-width: 90%;
   color: white;
   display: flex;
   justify-content: space-around;
