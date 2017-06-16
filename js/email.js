@@ -1,23 +1,6 @@
 "use strict";
 $(document).ready(function(){
 
-	//slide all the home content off screen
-	function slideOff(){
-		$('.marketing, .viewing, .information').css('display', 'none');
-		$('#home').addClass('slide')
-		setTimeout(function(){
-			$('#home').css('display','none');
-		}, 300);
-	}
-
-	//go to new content
-	function goTo(page){
-		setTimeout(function(){
-			$(page).css('display', 'block');
-			$('#back').css('display', 'block');
-		}, 300);
-	}
-
 	//let the user go back to home
 	$('.homebutton, #back').click(function(){
 		$('#home').css('display','block').removeClass('slide');
@@ -41,13 +24,26 @@ $(document).ready(function(){
 	smoothScroll($('#viewValueScroll'),$('#viewValueDiv'));
 	smoothScroll($('#viewNotifScroll'),$('#viewNotifDiv'));
 
-	//trigger the relevant page when its button is clicked
-	$('.menuButton').on("click", function(){
-		slideOff();
-		var getPage = $('.'+this.id);
-		goTo(getPage);
-	});
+	//slide all the home content off screen
+	function slideOff(){
+		$('.marketing, .viewing, .information').css('display', 'none');
+		$('#home').addClass('slide')
+		setTimeout(function(){
+			$('#home').css('display','none');
+		}, 300);
+	}
 
+	//go to new content
+	function goTo(page){
+		setTimeout(function(){
+			$(page).css('display', 'block');
+			$('#back').css('display', 'block');
+		}, 300);
+	}
+
+	//used for footer links
+	//trying to get this to work for the menu buttons
+	//but struggling to pass "this" as an argument correctly
 	function goToPage(name, page){
 		name.click(function(){
 			slideOff();
@@ -55,11 +51,13 @@ $(document).ready(function(){
 		});
 	}
 
+	$('.menuButton').click(function(){
+		slideOff();
+		goTo($('.'+this.id));
+	});
 	goToPage($('#appraisalFooterLink'), $('.marketing'));
 	goToPage($('#viewingFooterLink'), $('.viewing'));
 	goToPage($('#supportFooterLink'), $('.information'));
-	// goToPage($('.menuButton'), $('.'+this.id));
-
 
 	//dropdown list 
 	function display(button, div){
