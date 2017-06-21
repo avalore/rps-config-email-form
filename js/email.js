@@ -19,8 +19,7 @@ $(document).ready(function(){
 	smoothScroll($('#valueScroll'),$('#valueDiv'));
 	smoothScroll($('#notifScroll'),$('#notifDiv'));
 	smoothScroll($('#glosetScroll'),$('#glosetDiv'));
-	smoothScroll($('#back, .homebutton'),$('html'));
-	smoothScroll($('.menuButton'), $('html'));
+	smoothScroll($('#back, .button'),$('html'));
 	smoothScroll($('#viewValueScroll'),$('#viewValueDiv'));
 	smoothScroll($('#viewNotifScroll'),$('#viewNotifDiv'));
 
@@ -55,7 +54,7 @@ $(document).ready(function(){
 		});
 	}
 
-	goToPage($('.button'));
+	goToPage($('.menuButton'));
 	goToPage($('#appraisalFooterLink'), $('.marketing'));
 	goToPage($('#viewingFooterLink'), $('.viewing'));
 	goToPage($('#supportFooterLink'), $('.information'));
