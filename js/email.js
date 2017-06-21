@@ -47,14 +47,15 @@ $(document).ready(function(){
 	function goToPage(name, page){
 		name.click(function(){
 			slideOff();
-			goTo(page);
+			if(name.hasClass('button')){
+				goTo($('.'+this.id));
+			} else{
+				goTo(page);
+			}
 		});
 	}
 
-	$('.menuButton').click(function(){
-		slideOff();
-		goTo($('.'+this.id));
-	});
+	goToPage($('.button'));
 	goToPage($('#appraisalFooterLink'), $('.marketing'));
 	goToPage($('#viewingFooterLink'), $('.viewing'));
 	goToPage($('#supportFooterLink'), $('.information'));
