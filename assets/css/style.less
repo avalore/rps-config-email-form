@@ -1,6 +1,8 @@
+								// variables
 @reapitBlue: rgba(29,139,203,1);
 @dark: #333333;
 
+								// body styles
 body{
 	font-family: 'Roboto', sans-serif;
 	line-height: 1.34;
@@ -10,9 +12,49 @@ body{
 	background: linear-gradient(135deg, rgba(62,84,165,1) 0%,@reapitBlue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e54a5', endColorstr='#6083ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+								// logo
 .brand{
 	text-align: center;
 }
+
+								//loading spinner
+
+.spinner{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
+	background: rgba(255,255,255,0.7);
+	&:after{
+		border: 2px solid transparent;
+		border-top-color: @reapitBlue;
+		animation: spin .8s linear infinite;
+	}
+	&:after, &:before{
+		content: '';
+		display: block;
+		margin: 0 auto;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+}
+@keyframes spin{
+	0%{
+		transform: rotate(0deg);
+	}
+	55%{
+		transform: rotate(40deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+								// main container
 .container{
 	width: 800px;
 	max-width: 90%;
@@ -22,6 +64,10 @@ body{
 	text-align: center;
 	background-color: #ffffff;
 	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+	pre{
+		margin: 0;
+	}
+	// back arrow button
 	#back{
 		position: absolute;
 		top: 30px;
@@ -82,20 +128,26 @@ body{
 		}
 	}
 }
+// basically a HR tag, just looks nicer
 .line{
 	height: 1px;
 	border-top: 1px solid @reapitBlue;
 }
+
+// home transition
 #home{
 	transition: all 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
 	webkit-transition: all 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
 	opacity: 1;
 }
+
+// slide class - adding it makes content slide off screen
 .slide{
 	-webkit-transform: translateX(-150px) !important;
 	transform: translateX(-150px) !important;
 	opacity: 0 !important;
 }
+
 //global forms
 .marketing, .viewing, .information{
 	display: none;	
@@ -120,13 +172,17 @@ hr{
 	border: 1px solid @reapitBlue;
 	margin: 0;
 }
+
+// wrapper inside the pages to display text to the left and more appropriate
 .settingsWrapper{
 	text-align: left;
 	p{
 		font-size: 16px;
+		margin-bottom: 30px;
 	}
 	input, textarea{
-		width: 40%;
+		width: 250px;
+		margin: 0 50px;
 		padding: 10px;
 		outline: 0;
 		border: 0;
@@ -142,13 +198,43 @@ hr{
 	}
 	input[type="checkbox"]{
 		width: auto;
+		float: none;
 		border: 0;
 		box-shadow: none;
 		color: @dark;
 		font-weight: 400;
 		margin: 0 10px;
 	}
+	.negotiatorWrapper{
+		display: flex;
+		input{
+			height: 17px;
+			margin-top: 18px;
+			margin-left: 0;
+			margin-right: 0;
+		}
+		i{
+			margin-top: 30px;
+			margin-left: 20px;
+			color: @reapitBlue;
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
 }
+
+.removeNegotiator{
+	position: absolute; 
+	top: 10px; 
+	right: 10px;
+	color: @reapitBlue;
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+// navigation smooth scroll buttons
 .navigation{
 	display: flex;
 	justify-content: space-around;
@@ -156,6 +242,8 @@ hr{
 		color: @reapitBlue;
 	}
 }
+
+// footer (incase you didn't know)
 .footer{
 	margin: 0 auto;
 	width: 870px;
@@ -190,10 +278,12 @@ hr{
 	font-size: 12px;
 	margin-bottom: 50px;
 }
+
+									// gallery of examples
 .grid{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	.item{
 		width: calc(33% - 5px);
 		height: 150px;
@@ -207,85 +297,7 @@ hr{
 		}
 	}
 }
-.appraisalGrid .item{
-	&:first-child{
-		background-image: url('../img/appraisal01.png');
-	}
-	&:nth-child(2){
-		background-image: url('../img/appraisal02.png');
-	}
-	&:nth-child(3){
-		background-image: url('../img/appraisal03.png');
-	}
-	&:nth-child(4){
-		background-image: url('../img/appraisal04.png');
-	}
-	&:nth-child(5){
-		background-image: url('../img/appraisal05.png');
-	}
-	&:nth-child(6){
-		background-image: url('../img/appraisal06.png');
-	}
-}
-.viewingGrid{ 
-	display: none;
-	.item{
-		&:first-child{
-			background-image: url('../img/viewing01.png');
-		}
-		&:nth-child(2){
-			background-image: url('../img/viewing02.png');
-		}
-		&:nth-child(3){
-			background-image: url('../img/viewing03.png');
-		}
-		&:nth-child(4){
-			background-image: url('../img/viewing04.png');
-		}
-		&:nth-child(5){
-			background-image: url('../img/viewing05.png');
-		}
-		&:nth-child(6){
-			background-image: url('../img/viewing06.png');
-		}
-	}
-}
-.rpsGrid{ 
-	display: none;
-	.item{
-		&:first-child{
-			background-image: url('../img/rps01.png');
-		}
-		&:nth-child(2){
-			background-image: url('../img/rps02.png');
-		}
-		&:nth-child(3){
-			background-image: url('../img/rps03.png');
-		}
-		&:nth-child(4){
-			background-image: url('../img/rps04.png');
-		}
-		&:nth-child(5){
-			background-image: url('../img/rps05.png');
-		}
-		&:nth-child(6){
-			background-image: url('../img/rps06.png');
-		}
-	}
-}
-.fa-chevron-right{
-	margin-left: 5px;
-	font-size: 10px !important;
-	transform: translateY(-1px);
-	transition: all .2s ease-in-out;
-}
-.dropdownButton{
-	cursor: pointer;
-	font-weight: 400;
-	&:hover > .fa-chevron-right{
-		transform: rotate(90deg);
-	}
-}
+								// show bigger version of image clicked in gallery
 .modal{
 	position: fixed;
 	overflow-y: auto;
@@ -294,9 +306,11 @@ hr{
 	right: 0;
 	left: 0;
 	text-align: center;
-	background-color: rgba(0, 0, 0, 0.85);
+	background-color: rgba(0, 0, 0, 0.7);
 	img{
-		margin: 25px 0;
+		margin:  25px 50px;
+		max-width: 500px;
+		vertical-align: top;
 	}
 	.caption{
 		color: white;

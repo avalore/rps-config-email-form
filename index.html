@@ -1,74 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
+
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="RPS digital ordering configuration">
-		<meta name="author" content="Jake Flynn">
+		<!-- meta -->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="RPS digital ordering configuration" />
+		<meta name="author" content="Jake Flynn" />
 		<title>RDA Configuration</title>
+
+		<!-- styles -->
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
-		<link rel="stylesheet" href="css/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400" />
+		<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 	</head>
+
 	<body>
+
+		<!-- logo image at the top of the page -->
 		<div class="brand">
-			<a href="http://www.reapit.com/" target="_blank">
-				<img style="margin-top: 50px;" width="250px" src="img/reapit-logo-white.png" alt="Reapit Logo">
+			<a href="http://www.reapit.com/">
+				<img style="margin-top: 50px; width:250px;" src="assets/img/reapit-logo-white.png" alt="Reapit Logo" />
 			</a>
 		</div>
-		<!-- main container -->
+
 		<div class="container">
+
 			<!-- begin form -->
-			<form action="">
+			<rpw:forms.response>
+                <param name="recipient">jflynn@reapit.com</param>
+                <param name="subject">RPS Digital Configuration</param>
+                <param name="from" value="jflynn@reapit.com" />
+                <param name="fromName" value="Reapit Client" />
+                <param name="successPage">content/success/</param>
+                <!-- <param name="databaseTable"></param> -->
+                <param name="responseHtmlTemplate">content/email/index.html</param>
+
+                <!-- hidden inputs -->
+                <input name="Completed" type="hidden" value="{{ user.Completed || 'Yes' }}" />
 
 				<!-- this is the button that appears to go back to home -->
-				<i id="back" class="fa fa-chevron-left" aria-hidden="true"></i>
+				<i id="back" class="fa fa-chevron-left"></i>
+
+				<!-- homepage -->
 				<div id="home">
-					<h1>RPS Digital Configuration</h1>
+					<div class="spinner"></div>
+					<h1>RDA Configuration</h1>
 					<p>Please fill out the relevant forms below.</p>
-					<div id="marketing" class="button menuButton" data-target="appriasal-page">Market Appraisal Plugin</div>
+					<div id="marketing" class="button menuButton">Market Appraisal Plugin</div>
 					<div id="viewing" class="button menuButton">Viewing Request Plugin</div>
 					<p>Once you're done, click below to submit your requirements</p>
-					<input type="submit" class="button menuButton" value="Finished">
+					<input name="_submit" type="submit" class="button" id="submit" value="Finished"/>
 					<div class="line"></div>
 					<p>Information such as pre-requisites and advice can be found below.</p>
-					<div id="information" class="button menuButton">Support</div>
+					<div id="information" class="button menuButton">More Info</div>
 					<p>This form is used as part of the RPS Digital ordering process.</p>
-					<p>You can download the full document <a href="RDA-Configuration-Document.docx" download>here</a>.</p>
 				</div>
 
-				<!-- this is the placeholder for the different form sections -->
-
+				<!-- market appraisal plugin "page" -->
 				<div class="marketing">
 					<h1>Market Appraisal Plugin</h1>
 					<p>This plugin provides the ability to book an appointment directly into RPS based on available timeslots. The appointment process can create a new contact if there isn't already one.</p>
+					<p>You can <a href="#" id="marketExamples">click here</a> to see examples of this plugin.</p>
+					<div class="marketingExample grid"></div>
 					<h3>Quick Navigation</h3>
+
+					<!-- smooth scroll navigation down the page -->
 					<div class="navigation">
 						<a href="#" id="valueScroll">Valuer Diaries</a>
 						<a href="#" id="notifScroll">Notifications</a>
 						<a href="#" id="glosetScroll">Global Settings</a>
 					</div>
+					
+					<!-- valuer diary section -->
 					<h2 id="valueDiv">Valuer Diaries</h2>
 					<p>The appointment diary allows for negotiators/valuers to be pre-configured and added to the list, which is presented to your client, for the market appraisal to be booked.</p>
+					<p>Please choose <strong>one</strong> option for sales and/or lettings.</p>
 					<div class="settingsWrapper">
 						<h3>Sales</h3>
 						<label>Job Title(s):</label>
-						<input type="text">
+						<input type="text"/>
+						<input type="checkbox" value="marketappDiarySalesJobtitleDefault" />Keep default
 						<p>Defaults:<br/>
 						Valuer, Negotiator, Property Consultant, Senior Property Consultant, Sales Negotiator, Sales Associate</p>
 						<label>Specific Negotiators:</label>
-						<input type="text">
+						<div class="negotiatorWrapper">
+							<label>Name:</label>
+							<input type="text" id="marketappSalesNegoName"/>
+							<label>Office:</label>
+							<input type="text" id="marketappSalesNegoOffice"/>
+							<div class="addNegotiator">
+								<i class="fa fa-plus"></i>
+							</div>
+						</div>
+						<div class="negoList" id="marketappSalesNegoList"></div>
 						<p>For this please use <strong>full names</strong> and ensure that you have at least one person from each of your offices.</p>
 						<h3>Lettings</h3>
 						<label>Job Title(s):</label>
-						<input type="text">
+						<input type="text"/>
+						<input type="checkbox" value="marketappDiaryLettingsJobtitleDefault" />Keep default
 						<p>Defaults:<br/>
 						Valuer, Negotiator, Property Consultant, Senior Property Consultant, Lettings Negotiator, Lettings Associate</p>
 						<label>Specific Negotiators:</label>
-						<input type="text">
+						<div class="negotiatorWrapper">
+							<label>Name:</label>
+							<input type="text" id="marketappLettingsNegoName"/>
+							<label>Office:</label>
+							<input type="text" id="marketappLettingsNegoOffice"/>
+							<div class="addNegotiator">
+								<i class="fa fa-plus"></i>
+							</div>
+						</div>
+						<div class="negoList" id="marketappLettingsNegoList"></div>
 						<p>For this please use <strong>full names</strong> and ensure that you have at least one person from each of your offices.</p>
 					</div>
+					
+					<!-- notifications setup section -->
 					<h2 id="notifDiv">Notifications</h2>
 					<p>When an appointment is being booked, the following notification events are triggered:</p>
 					<div class="settingsWrapper">
@@ -77,20 +125,23 @@
 						<p><strong>If you would like this changed you will need to review with your web company.</strong></p>
 						<h3>Email Subject</h3>
 						<label>Sales:</label>
-						<input type="text">
+						<input type="text"/>
+						<input type="checkbox" value="marketappEmailSubjSalesDefault" />Keep default
 						<p>Default:<br/>
-						“Your Valuation Request”</p>
+						"Your Valuation Request"</p>
 						<label>Lettings:</label>
-						<input type="text">
+						<input type="text"/>
+						<input type="checkbox" value="marketappEmailSubjLettingsDefault" />Keep default
 						<p>Default:<br/>
-						“Your Lettings Valuation Request”</p>
+						"Your Lettings Valuation Request"</p>
 						<h3>Reply Address</h3>
-						<label>Please Specify Address:</label>
-						<input type="text" placeholder="no-reply@client-website.co.uk">
+						<label>Specify Address:</label>
+						<input type="text" placeholder="no-reply@client-website.co.uk" />
 						<p><strong>We will provide technical details to your web company/mail provider to allow emails to be sent on behalf of your domain.</strong></p>
 						<h3>Email Content</h3>
 						<label>Enter Custom Text:</label>
-						<textarea rows="1"></textarea>
+						<textarea rows="1" cols="1"></textarea>
+						<input type="checkbox" value="marketappEmailContentDefault" />Keep default
 						<p>* Default:<br/>
 						((Vendor))<br/><br/>
 						Your valuation has been booked for ((hh:mm)) on ((DD MMMM)) at ((Property Full Address)).<br/><br/>
@@ -103,96 +154,125 @@
 						</strong></p>
 						<h3>Email Recipients</h3>
 						<p>It's possible to BCC (Blind Carbon Copy) the branch manager into these emails. Tick the box below if you'd like this.</p>
-						<input type="checkbox" value="bccManager">Also send to manager
+						<input type="checkbox" value="marketappBccManager" />Also send to branch manager
 						<h3>SMS Text Message</h3>
 						<label>Sales:</label>
-						<textarea rows="1"></textarea>
+						<textarea rows="1" cols="1"></textarea>
+						<input type="checkbox" value="marketappSMSSalesDefault" />Keep default
 						<p>* Default:<br/>
-						“Your valuation with ((negotiator)) has been booked for ((date)) at ((location)). To rearrange this appointment, please call ((telephone)).”</p>
+						"Your valuation with ((negotiator)) has been booked for ((date)) at ((location)). To rearrange this appointment, please call ((telephone))."</p>
 						<label>Lettings:</label>
-						<textarea rows="1"></textarea>
+						<textarea rows="1" cols="1"></textarea>
+						<input type="checkbox" value="marketappSMSLettingsDefault" />Keep default
 						<p>* Default:<br/>
-						“Your lettings valuation with ((negotiator)) has been booked for ((date)) at ((location)). To rearrange this appointment, please call ((telephone)).”</p>
+						"Your lettings valuation with ((negotiator)) has been booked for ((date)) at ((location)). To rearrange this appointment, please call ((telephone))."</p>
 						<p><strong>Please keep in mind this is an SMS text message and as such has some limitations.</strong></p>
 						<p>* double parentheses (()) denote where data will be used.</p>
 					</div>
+					
+					<!-- global settings section -->
 					<h2 id="glosetDiv">Global Settings</h2>
 					<div class="settingsWrapper">
 						<h3>Appointment Lead Time</h3>
 						<p>The time before an appointment can be made. This is set to ensure an appointment cannot be made immediately.</p>
 						<label>Lead Time:</label>
-						<input type="text">
+						<input type="text"/>
+						<input type="checkbox" value="marketappLeadtimeDefault" />Keep default
 						<p>Default:<br/>
 						6 hours</p>
 						<h3>Appointment Buffer</h3>
 						<p>Save time before and after pre-existing appointments to keep travel time accomodated.</p>
 						<label>Buffer Time:</label>
-						<input type="text">
+						<input type="text"/>
+						<input type="checkbox" value="marketappBufferDefault" />Keep default
 						<p>Default:<br/>
 						30 minutes</p>
 						<h3>Default Office</h3>
 						<p>A default office is set so that if a postcode can't be identified or is not within any office catchment area the message can be redirected to it.</p>
 						<label>Default Office:</label>
-						<input type="text">
+						<input type="text"/>
 						<h3>Holidays</h3>
 						<label>Company Holidays:</label>
-						<input type="text" placeholder="29/03/2018, 18/07/2020">
+						<input type="text" placeholder="29/03/2018, 18/07/2020" />
 						<br/>
 						<br/>
 						<label>National Holidays:</label>
-						<input type="checkbox" value="england">England &amp; Wales
-						<input type="checkbox" value="scotland">Scotland
-						<input type="checkbox" value="ireland">Northern Ireland
+						<input type="checkbox" value="england" />England &amp; Wales
+						<input type="checkbox" value="scotland" />Scotland
+						<input type="checkbox" value="ireland" />Northern Ireland
 						<h3>Opening Times</h3>
+						<p><strong>Any unmodified fields will be kept as their defaults (the times in each placeholder)</strong></p>
 						<label>Monday:</label>
-						<input type="text" placeholder="8am - 6pm">
+						<input type="text" placeholder="9am - 5:30pm" />
 						<br/>
 						<br/>
 						<label>Tuesday:</label>
-						<input type="text" placeholder="8am - 6pm">
+						<input type="text" placeholder="9am - 5:30pm" />
 						<br/>
 						<br/>
 						<label>Wednesday:</label>
-						<input type="text" placeholder="8am - 6pm">
+						<input type="text" placeholder="9am - 5:30pm" />
 						<br/><br/>
 						<label>Thursday:</label>
-						<input type="text" placeholder="8am - 6pm">
+						<input type="text" placeholder="9am - 5:30pm" />
 						<br/><br/>
 						<label>Friday:</label>
-						<input type="text" placeholder="8am - 6pm">
+						<input type="text" placeholder="9am - 5:30pm" />
 						<br/><br/>
 						<label>Saturday:</label>
-						<input type="text" placeholder="9am - 5pm">
+						<input type="text" placeholder="9am - 5pm" />
 						<br/><br/>
 						<label>Sunday:</label>
-						<input type="text" placeholder="Closed">
+						<input type="text" placeholder="Closed" />
 					</div>
+
+					<!-- save input and return to homepage -->
 					<p>To submit your configuration, return to the homepage</p>
 					<div class="homebutton button">Save</div>
 				</div>
+				
+				<!-- viewing request plugin "page" -->
 				<div class="viewing">
 					<h1>Viewing Request Plugin</h1>
+					<p>You can <a href="#" id="viewExamples">click here</a> to see examples of this plugin.</p>
+					<div class="viewingExample grid"></div>
 					<h3>Quick Navigation</h3>
+
+					<!-- smooth scroll navigation throughout page -->
 					<div class="navigation">
 						<a href="#" id="viewValueScroll">Viewer Diaries</a>
 						<a href="#" id="viewNotifScroll">Viewing Notifications</a>
 					</div>
+
+					<!-- valuer diary setup section -->
 					<h2 id="viewValueDiv">Viewer Diaries</h2>
 					<p>The viewing plugin allows the option to create viewing appointment requests directly into RPS for a specific property.</p>
 					<div class="settingsWrapper">
-						<p>Please select the option you would like, and enter the relevant text if required.</p>
+						<p><strong>Please choose one option (Property Negotiator, Job Title(s), or Specific Negotiator)</strong></p>
 						<h3>Diary Options</h3>
 						<label>Property Negotiator</label>
-						<input type="checkbox" value="viewingNegoDefault">Keep default
+						<input type="checkbox" value="viewingDiaryPropNegoDefault" />Keep default
 						<br/><br/>
 						<label>Job Title(s):</label>
-						<input type="text">
+						<input type="text"/>
+						<input type="checkbox" value="viewingDiaryJobTitleDefault" />Keep default
 						<p>Defaults:<br/>
 						Valuer, Negotiator, Property Consultant, Senior Property Consultant, Sales Negotiator, Sales Associate</p>
 						<label>Specific Negotiators:</label>
-						<input type="text">
+						<div class="negotiatorWrapper">
+							<label>Name:</label>
+							<input type="text" id="viewingNegoName"/>
+							<label>Office:</label>
+							<input type="text" id="viewingNegoOffice"/>
+							<div class="addNegotiator">
+								<i class="fa fa-plus"></i>
+							</div>
+						</div>
+						<div class="negoList" id="viewingNegoList"></div>
 						<p>For this please use <strong>full names</strong> and ensure that you have at least one person from each of your offices.</p>
 					</div>
+
+					<!-- notification setup section -->
 					<h2 id="viewNotifDiv">Notifications</h2>
 					<p>When an appointment is being booked, the following notification events are triggered:</p>
 					<div class="settingsWrapper">
@@ -201,16 +281,18 @@
 						<p><strong>If you would like this changed you will need to review with your web company.</strong></p>
 						<h3>Email Subject</h3>
 						<label>Subject Line:</label>
-						<input type="text">
+						<input type="text"/>
+						<input type="checkbox" value="viewingEmailSubjDefault" />Keep default
 						<p>* Default:<br/>
-						“Your Viewing Request for ((location))”</p>
+						"Your Viewing Request for ((location))"</p>
 						<h3>Reply Address</h3>
 						<label>Please Specify Address:</label>
-						<input type="text" placeholder="no-reply@client-website.co.uk">
+						<input type="text" placeholder="no-reply@client-website.co.uk"/>
 						<p><strong>We will provide technical details to your web company/mail provider to allow emails to be sent on behalf of your domain.</strong></p>
 						<h3>Email Content</h3>
-						<label>Enter Custom Text (if applicable):</label>
-						<textarea rows="1"></textarea>
+						<label>Enter Custom Text:</label>
+						<textarea rows="1" cols="1"></textarea>
+						<input type="checkbox" value="viewingEmailContentDefault" />Keep default
 						<p>* Default:<br/>
 						Your viewing at ((Property Full Address)) has been booked for ((hh:mm)) on ((DD MMMM)).<br/><br/>
 						If you have any queries or need to rearrange, please call me on ((Property Manager Number)) or e-mail ((Property Manager Email Address)).<br/><br/>
@@ -222,30 +304,34 @@
 						</strong></p>
 						<h3>Email Recipients</h3>
 						<p>It's possible to BCC (Blind Carbon Copy) the valuer into these emails. Tick the box below if you'd like this.</p>
-						<input type="checkbox" value="bccManager">Also send to manager
+						<input type="checkbox" value="viewingBccManager"/>Also send to manager
 						<h3>SMS Text Message</h3>
 						<label>Message:</label>
-						<textarea rows="1"></textarea>
+						<textarea rows="1" cols="1"></textarea>
+						<input type="checkbox" value="viewingSMSDefault" />Keep default
 						<p>* Default:<br/>
-						“Your viewing at ((location)) has been booked with ((negotiator)) for ((date)). To rearrange this appointment, please call ((telephone)).”</p>
+						"Your viewing at ((location)) has been booked with ((negotiator)) for ((date)). To rearrange this appointment, please call ((telephone))."</p>
 						<p><strong>Please keep in mind this is an SMS text message and as such has some limitations.</strong></p>
 						<p>* double parentheses (()) denote where data will be used.</p>
 					</div>
+
+					<!-- save input and return to homepage -->
 					<p>To submit your configuration, return to the homepage</p>
 					<div class="homebutton button">Save</div>
 				</div>
+				
+				<!-- support page -->
 				<div class="information">
 					<h1>Support</h1>
 					<p>This page should cover all of your queries regarding RPS Digital.</p>
 					<div class="settingsWrapper">
+
+						<!-- information -->
 						<h3>Pre-Requisites</h3>
 						<p>RPS Digital has a couple of pre-requisites to work.</p>
 						<ul>
 							<li>
 								<strong>Hosting</strong> - RPS data <strong>must</strong> be hosted on Reapit Servers in order to use RPS Digital.
-							</li>
-							<li>
-								<strong>jQuery</strong> - RPS Digital makes use of jQuery and as such requires the library. A minimum version of 1.9 is required.
 							</li>
 							<li>
 								<strong>Workflow</strong> - Any RPS workflow will need to be reviewed and ensure client acceptance is received.
@@ -260,50 +346,16 @@
 								</ul>
 							</li>
 						</ul>
-						<h3>Web Intergration Methods</h3>
-						<p>There are two available methods to intergrate onto your website.</p>
-						<h4>jQuery</h4>
-						<p><a href="https://tracker.reapit.net/demo/_demo/valuation/documentation" target="_blank">Valuation Plugin</a></p>
-						<p><a href="https://tracker.reapit.net/demo/_demo/viewing/documentation" target="_blank">Viewing Plugin</a></p>
-						<p>To test the "Book a Valuation" link on the demo page, please use <strong>MK1 1DF</strong> as the postcode to ensure that a full registration cycle takes place.</p>
-						<p>Note that any data added to this form will be overwritten regularly.</p>
-						<h4>API Endpoints</h4>
-						<p><a href="https://tracker.reapit.net/demo/_doc/web-service/diary-extension-pack/" target="_blank">Diary Extension Packs</a></p>
+
+						<!-- gallery of examples -->
 						<h3>Examples</h3>
-						<p>Below are some examples of the plugins. You can click on an image for a better view and description.</p>
-						<h4>Market Apraisal Booking Examples</h4>
-						<div class="appraisalGrid grid">
-							<div class="item" id="appraisal01"></div>
-							<div class="item" id="appraisal02"></div>
-							<div class="item" id="appraisal03"></div>
-							<div class="item" id="appraisal04"></div>
-							<div class="item" id="appraisal05"></div>
-							<div class="item" id="appraisal06"></div>
-						</div>
-						<h4>Viewing Request Booking Examples</h4>
-						<p id="viewingExamplesShow" class="dropdownButton">Show<i class="fa fa-chevron-right" aria-hidden="true"></i></p>
-						<div class="viewingGrid grid">
-							<div class="item" id="viewing01"></div>
-							<div class="item" id="viewing02"></div>
-							<div class="item" id="viewing03"></div>
-							<div class="item" id="viewing04"></div>
-							<div class="item" id="viewing05"></div>
-							<div class="item" id="viewing06"></div>
-						</div>
-						<h4>RPS Interaction Examples</h4>
-						<p id="rpsExamplesShow" class="dropdownButton">Show<i class="fa fa-chevron-right" aria-hidden="true"></i></p>
-						<div class="rpsGrid grid">
-							<div class="item" id="rps01"></div>
-							<div class="item" id="rps02"></div>
-							<div class="item" id="rps03"></div>
-							<div class="item" id="rps04"></div>
-							<div class="item" id="rps05"></div>
-							<div class="item" id="rps06"></div>
-						</div>
+						<p>You can <a href="https://tracker.reapit.net/dev/demo/_demo/rda/">look here</a> to see a demo of the different plugins.</p>
 					</div>
 				</div>
-			</form>
+			</rpw:forms.response>
 		</div>
+
+		<!-- page footer -->
 		<div class="footer">
 			<div class="column">
 				<h5>Products</h5>
@@ -329,10 +381,7 @@
 						<a href="#" id="viewingFooterLink">Viewing Request Plugin</a>
 					</li>
 					<li>
-						<a href="#" id="supportFooterLink">Support</a>
-					</li>
-					<li>
-						<a href="RDA-Configuration-Document.docx" download>Full Document</a>
+						<a href="#" id="supportFooterLink">More Information</a>
 					</li>
 				</ul>
 			</div>
@@ -349,7 +398,10 @@
 			</div>
 		</div>
 		<p class="copy">&copy; Reapit Ltd 2017</p>
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/email.js"></script>	
+
+		<!-- scripts -->
+		<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/email.js"></script>	
+
 	</body>
 </html>

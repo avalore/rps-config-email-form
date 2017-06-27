@@ -15,6 +15,40 @@ body {
 .brand {
   text-align: center;
 }
+.spinner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background: rgba(255, 255, 255, 0.7);
+}
+.spinner:after {
+  border: 2px solid transparent;
+  border-top-color: #1d8bcb;
+  animation: spin .8s linear infinite;
+}
+.spinner:after,
+.spinner:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  55% {
+    transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .container {
   width: 800px;
   max-width: 90%;
@@ -24,6 +58,9 @@ body {
   text-align: center;
   background-color: #ffffff;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+.container pre {
+  margin: 0;
 }
 .container #back {
   position: absolute;
@@ -135,10 +172,12 @@ hr {
 }
 .settingsWrapper p {
   font-size: 16px;
+  margin-bottom: 30px;
 }
 .settingsWrapper input,
 .settingsWrapper textarea {
-  width: 40%;
+  width: 250px;
+  margin: 0 50px;
   padding: 10px;
   outline: 0;
   border: 0;
@@ -157,11 +196,38 @@ hr {
 }
 .settingsWrapper input[type="checkbox"] {
   width: auto;
+  float: none;
   border: 0;
   box-shadow: none;
   color: #333333;
   font-weight: 400;
   margin: 0 10px;
+}
+.settingsWrapper .negotiatorWrapper {
+  display: flex;
+}
+.settingsWrapper .negotiatorWrapper input {
+  height: 17px;
+  margin-top: 18px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.settingsWrapper .negotiatorWrapper i {
+  margin-top: 30px;
+  margin-left: 20px;
+  color: #1d8bcb;
+}
+.settingsWrapper .negotiatorWrapper i:hover {
+  cursor: pointer;
+}
+.removeNegotiator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #1d8bcb;
+}
+.removeNegotiator:hover {
+  cursor: pointer;
 }
 .navigation {
   display: flex;
@@ -207,7 +273,7 @@ hr {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .grid .item {
   width: calc(28%);
@@ -221,79 +287,6 @@ hr {
   cursor: pointer;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
-.appraisalGrid .item:first-child {
-  background-image: url('../img/appraisal01.png');
-}
-.appraisalGrid .item:nth-child(2) {
-  background-image: url('../img/appraisal02.png');
-}
-.appraisalGrid .item:nth-child(3) {
-  background-image: url('../img/appraisal03.png');
-}
-.appraisalGrid .item:nth-child(4) {
-  background-image: url('../img/appraisal04.png');
-}
-.appraisalGrid .item:nth-child(5) {
-  background-image: url('../img/appraisal05.png');
-}
-.appraisalGrid .item:nth-child(6) {
-  background-image: url('../img/appraisal06.png');
-}
-.viewingGrid {
-  display: none;
-}
-.viewingGrid .item:first-child {
-  background-image: url('../img/viewing01.png');
-}
-.viewingGrid .item:nth-child(2) {
-  background-image: url('../img/viewing02.png');
-}
-.viewingGrid .item:nth-child(3) {
-  background-image: url('../img/viewing03.png');
-}
-.viewingGrid .item:nth-child(4) {
-  background-image: url('../img/viewing04.png');
-}
-.viewingGrid .item:nth-child(5) {
-  background-image: url('../img/viewing05.png');
-}
-.viewingGrid .item:nth-child(6) {
-  background-image: url('../img/viewing06.png');
-}
-.rpsGrid {
-  display: none;
-}
-.rpsGrid .item:first-child {
-  background-image: url('../img/rps01.png');
-}
-.rpsGrid .item:nth-child(2) {
-  background-image: url('../img/rps02.png');
-}
-.rpsGrid .item:nth-child(3) {
-  background-image: url('../img/rps03.png');
-}
-.rpsGrid .item:nth-child(4) {
-  background-image: url('../img/rps04.png');
-}
-.rpsGrid .item:nth-child(5) {
-  background-image: url('../img/rps05.png');
-}
-.rpsGrid .item:nth-child(6) {
-  background-image: url('../img/rps06.png');
-}
-.fa-chevron-right {
-  margin-left: 5px;
-  font-size: 10px !important;
-  transform: translateY(-1px);
-  transition: all 0.2s ease-in-out;
-}
-.dropdownButton {
-  cursor: pointer;
-  font-weight: 400;
-}
-.dropdownButton:hover > .fa-chevron-right {
-  transform: rotate(90deg);
-}
 .modal {
   position: fixed;
   overflow-y: auto;
@@ -302,10 +295,12 @@ hr {
   right: 0;
   left: 0;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .modal img {
-  margin: 25px 0;
+  margin: 25px 50px;
+  max-width: 500px;
+  vertical-align: top;
 }
 .modal .caption {
   color: white;
